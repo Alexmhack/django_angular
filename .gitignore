@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# migrations folder
+accounts/migrations
+leads/migrations
+contacts/migrations
+opportunities/migrations
+
+# sublime project file
+django_angular.sublime-project
