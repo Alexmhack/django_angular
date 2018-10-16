@@ -49,9 +49,12 @@ INSTALLED_APPS = [
     # packages
     'djangorestframework',
     'corsheaders',
+    'debug_toolbar',    # <- django-debug-toolbar
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',  # <- debug-toolbar middleware
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -135,3 +138,7 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_WHITELIST = (
     'localhost:4200',
 )
+
+
+# django-debug-toolbar settings
+INTERNAL_IPS = ['127.0.0.1']
