@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'opportunities',
 
     # packages
-    'djangorestframework',
+    'rest_framework',
     'corsheaders',
     'debug_toolbar',    # <- django-debug-toolbar
 ]
@@ -157,3 +157,13 @@ CACHES = {
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
+
+
+# REST FRAMEWORK
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'  # IsAuthenticatedOrReadOnly
+    ]
+}
